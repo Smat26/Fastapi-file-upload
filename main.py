@@ -55,7 +55,7 @@ async def upload(
         raise HTTPException(status_code=500, detail="File already exists. ")
     #
     try:
-        with open(save_path, "wb") as f:
+        with open(save_path, "ab") as f:
             # log.info(f"Seek position writing: {chunk_byte_offset}")
             # log.info(f"Chunk number should be: {chunk_byte_offset /(8*1024*1024)}")
             f.seek(chunk_byte_offset)
